@@ -1,5 +1,6 @@
 export const registerUser = async (email, password, name) => {
-  const res = await fetch("http://localhost:8085/projectwork/api/users/register", {
+ 
+  const res = await fetch(" ${process.env.REACT_APP_API_URL}/projectwork/api/users/register", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, email, password }),
@@ -10,7 +11,7 @@ export const registerUser = async (email, password, name) => {
 };
 
 export const loginUser = async (email, password) => {
-  const res = await fetch("http://localhost:8085/projectwork/api/users/login", {
+  const res = await fetch(" ${process.env.REACT_APP_API_URL}/projectwork/api/users/login", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
