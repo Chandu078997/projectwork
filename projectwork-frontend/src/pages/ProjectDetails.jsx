@@ -10,7 +10,7 @@ function ProjectDetails() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:8085/projectwork/api/projects/details/${projectId}`)
+    fetch(` ${process.env.REACT_APP_API_URL}/projectwork/api/projects/details/${projectId}`)
       .then((res) => res.json())
       .then((data) => {
         setProject(data);
@@ -22,7 +22,7 @@ function ProjectDetails() {
   const handleSubmit = () => {
     const userId = 1; // Replace with real user ID later
     fetch(
-      `http://localhost:8085/projectwork/api/projects/submit/${projectId}?userId=${userId}&submissionLink=${encodeURIComponent(submissionLink)}`,
+      ` ${process.env.REACT_APP_API_URL}projectwork/api/projects/submit/${projectId}?userId=${userId}&submissionLink=${encodeURIComponent(submissionLink)}`,
       { method: "POST" }
     )
       .then((res) => res.text())
