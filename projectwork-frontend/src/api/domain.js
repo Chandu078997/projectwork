@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8085/projectwork";
+const BASE_URL =  ${process.env.REACT_APP_API_URL};
 
 export async function fetchDomains() {
   const res = await fetch(`${BASE_URL}/domains`);
