@@ -10,7 +10,7 @@ function Home() {
     if (!localStorage.getItem("loggedIn")) {
       return; // Only load if logged in
     }
-    fetch("http://localhost:8085/projectwork/domains")
+    fetch(" ${process.env.REACT_APP_API_URL}/projectwork/domains")
       .then((res) => res.json())
       .then((data) => {
         setDomains(data);
