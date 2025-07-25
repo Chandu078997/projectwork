@@ -8,7 +8,7 @@ function Projects() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:8085/projectwork/api/projects/domain/${domainId}`)
+    fetch(` ${process.env.REACT_APP_API_URL}/projectwork/api/projects/domain/${domainId}`)
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
